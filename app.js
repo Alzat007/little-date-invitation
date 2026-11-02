@@ -14,7 +14,7 @@
     { value: '学校', icon: '▤', note: '在校园公共区域见面' }
   ];
   const activities = [
-    { value: '亲密时光', icon: '♡', note: '亲密意向，届时双方再确认' },
+    { value: '做爱', icon: '♡', note: '亲密意向，届时双方再确认' },
     { value: '吃饭', icon: '♨', note: '' },
     { value: '画画', icon: '✎', note: '' },
     { value: '逛街', icon: '♧', note: '' },
@@ -22,6 +22,23 @@
   ];
   let confirmedPlan = null;
   let toastTimer;
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+  function addPlayfulFeedback(label, input) {
+    let bounceTimer;
+    function bounce() {
+      if (reducedMotion.matches || label.classList.contains('is-bouncing')) return;
+      label.classList.add('is-bouncing');
+      clearTimeout(bounceTimer);
+      bounceTimer = setTimeout(() => label.classList.remove('is-bouncing'), 500);
+    }
+    // Keep the label's hit area still; only its decorative surface moves.
+    label.addEventListener('pointerenter', (event) => {
+      if (event.pointerType === 'mouse' || event.pointerType === 'pen') bounce();
+    });
+    input.addEventListener('change', bounce);
+    input.addEventListener('click', bounce);
+  }
 
   function choice(item, name, checked = false) {
     const label = document.createElement('label');
@@ -33,6 +50,7 @@
     const copy = document.createElement('span'); copy.className = 'choice-copy'; copy.textContent = item.value;
     if (item.note) { const note = document.createElement('small'); note.textContent = item.note; copy.append(note); }
     label.append(input, icon, copy);
+    if (name === 'activity') addPlayfulFeedback(label, input);
     return label;
   }
   (hotelOnly ? brands : places).forEach((p) => $('locations').append(choice(p, 'location')));
@@ -124,13 +142,13 @@
     $('result-location').textContent = finalPlace;
     $('result-address').textContent = confirmedPlan.address || '具体地址，我们一起商量';
     $('result-activity').textContent = confirmedPlan.activity === '暂不决定' ? '见面再商量' : confirmedPlan.activity;
-    document.querySelector('.ticket-promise').firstChild.textContent = confirmedPlan.activity === '亲密时光' ? '亲密意向不代表同意，届时双方再确认。' : '带上好心情就好，其他的见面再说。';
+    document.querySelector('.ticket-promise').firstChild.textContent = confirmedPlan.activity === '做爱' ? '亲密意向不代表同意，届时双方再确认。' : '带上好心情就好，其他的见面再说。';
     show('confirmed', 2);
   });
   function toast(message) { clearTimeout(toastTimer); $('toast').textContent = message; $('toast').classList.add('visible'); toastTimer = setTimeout(() => $('toast').classList.remove('visible'), 3400); }
   function planText() {
     const p = confirmedPlan;
-    return `💌 我们的小小约定\n\n时间：${dateLabel(p.date)} ${p.time}（北京时间）\n地点：${p.place}\n地址：${p.address || '具体地址一起商量'}\n想做的事：${p.activity === '暂不决定' ? '见面再商量' : p.activity}\n\n${p.activity === '亲密时光' ? '亲密意向不代表同意，届时双方再确认。\n' : ''}仅为邀请，随时可以调整；不代表酒店预订。\n到时候见 ♡`;
+    return `💌 我们的小小约定\n\n时间：${dateLabel(p.date)} ${p.time}（北京时间）\n地点：${p.place}\n地址：${p.address || '具体地址一起商量'}\n想做的事：${p.activity === '暂不决定' ? '见面再商量' : p.activity}\n\n${p.activity === '做爱' ? '亲密意向不代表同意，届时双方再确认。\n' : ''}仅为邀请，随时可以调整；不代表酒店预订。\n到时候见 ♡`;
   }
   $('copy-card').addEventListener('click', async () => {
     if (!confirmedPlan) return;
@@ -169,7 +187,7 @@
     text('想一起做的事', 125, 970, 25, '#a07f89');
     text(p.activity === '暂不决定' ? '见面再商量' : p.activity, 125, 1030, 39);
     c.strokeStyle = '#e9d6db'; c.beginPath(); c.moveTo(125, 1100); c.lineTo(955, 1100); c.stroke();
-    text(p.activity === '亲密时光' ? '亲密意向不代表同意，届时双方再确认。' : '带上好心情就好，其他的见面再说。', 125, 1160, 25, '#a5818d');
+    text(p.activity === '做爱' ? '亲密意向不代表同意，届时双方再确认。' : '带上好心情就好，其他的见面再说。', 125, 1160, 25, '#a5818d');
     text('仅为邀请 · 随时可以调整 · 不代表酒店预订', 125, 1250, 23, '#a5818d');
     text('慢慢来，见面本来就是一件值得期待的事。', 250, 1360, 23, '#ad9197');
     return canvas;
