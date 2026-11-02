@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="560" height="400" viewBox="0 0 560 400" fill="none" role="img" aria-labelledby="title desc">
+  <title id="title">一封心动邀请</title>
+  <desc id="desc">粉色信封里装着奶油色信纸，配有爱心火漆和一朵小雏菊。</desc>
+  <defs>
+    <linearGradient id="back" x1="280" y1="91" x2="280" y2="340" gradientUnits="userSpaceOnUse"><stop stop-color="#E89BA8"/><stop offset="1" stop-color="#F5BEC5"/></linearGradient>
+    <linearGradient id="paper" x1="260" y1="51" x2="300" y2="286" gradientUnits="userSpaceOnUse"><stop stop-color="#FFFCF7"/><stop offset="1" stop-color="#FFF2E8"/></linearGradient>
+    <linearGradient id="front" x1="280" y1="219" x2="280" y2="357" gradientUnits="userSpaceOnUse"><stop stop-color="#F7C9CE"/><stop offset="1" stop-color="#F0AFBB"/></linearGradient>
+    <linearGradient id="seal" x1="269" y1="262" x2="290" y2="313" gradientUnits="userSpaceOnUse"><stop stop-color="#E88292"/><stop offset="1" stop-color="#CA536D"/></linearGradient>
+    <filter id="soft" x="-30%" y="-30%" width="160%" height="170%"><feDropShadow dx="0" dy="12" stdDeviation="12" flood-color="#9F5F6B" flood-opacity=".15"/></filter>
+    <filter id="small" x="-50%" y="-50%" width="200%" height="210%"><feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#9D4D5F" flood-opacity=".2"/></filter>
+  </defs>
+  <ellipse cx="286" cy="362" rx="166" ry="14" fill="#B96B7F" opacity=".08"/>
+  <path d="M87 144C79 136 66 142 70 152C73 161 86 166 86 166S101 154 99 147C97 140 91 139 87 144Z" fill="#F0ABB9" transform="rotate(-14 85 151)"/>
+  <path d="M468 82C462 76 452 80 455 88C458 95 467 99 467 99S479 89 477 83C475 78 471 78 468 82Z" fill="#DA5870" opacity=".75" transform="rotate(12 467 87)"/>
+  <path d="M454 251L457 261L467 264L457 267L454 277L451 267L441 264L451 261L454 251Z" fill="#DC9D63" opacity=".8"/>
+  <path d="M114 76L116 83L123 85L116 87L114 94L112 87L105 85L112 83L114 76Z" fill="#DC9D63" opacity=".8"/>
+  <circle cx="490" cy="185" r="3" fill="#DEA0AB"/>
+  <circle cx="73" cy="270" r="3" fill="#DEA0AB"/>
+  <g filter="url(#soft)" transform="rotate(-6 280 213)">
+    <path d="M117 181L265 76C275 69 283 69 293 76L441 181V331C441 343 432 352 420 352H138C126 352 117 343 117 331V181Z" fill="url(#back)" stroke="#D98C9C" stroke-width="1.5"/>
+    <path d="M120 181L280 288L439 181" stroke="#C77D8D" stroke-opacity=".45" stroke-width="1.5"/>
+    <rect x="153" y="57" width="254" height="249" rx="7" fill="url(#paper)" stroke="#E8C8BE" stroke-width="1.3"/>
+    <rect x="166" y="70" width="228" height="220" rx="2" stroke="#EAC9C6" stroke-dasharray="3 5"/>
+    <path d="M279 99C268 87 250 96 254 110C258 124 279 136 279 136S302 120 303 108C305 94 287 86 279 99Z" fill="#DA5870"/>
+    <path d="M278 102C272 95 262 98 261 105" stroke="#F8C6CF" stroke-width="3" stroke-linecap="round"/>
+    <path d="M212 159C237 156 270 157 294 158M307 158C320 158 333 160 347 159M211 176C251 174 300 175 349 177M231 194C259 192 285 192 315 194" stroke="#BD8B86" stroke-width="3" stroke-linecap="round" opacity=".55"/>
+    <path d="M250 214C260 204 266 208 260 219C256 226 253 230 258 229C266 227 277 207 280 207C287 207 273 226 277 226C286 222 286 217 290 217C293 217 290 224 294 224C299 225 303 222 308 218" stroke="#DA8797" stroke-width="2" stroke-linecap="round"/>
+    <path d="M117 182L280 287L441 182V331C441 343 432 352 420 352H138C126 352 117 343 117 331V182Z" fill="url(#front)"/>
+    <path d="M117 182L280 287L441 182" stroke="#D994A3" stroke-width="1.4"/>
+    <path d="M122 345L247 250C266 235 293 235 312 250L436 345" fill="#F5BCC7" stroke="#D994A3" stroke-width="1.3"/>
+    <path d="M143 337L246 259C267 244 292 244 312 259L415 337" stroke="#FAD6DB" stroke-width="1.2" opacity=".8"/>
+    <g filter="url(#small)">
+      <path d="M281 260C287 255 292 260 296 260C303 261 303 268 309 272C315 277 311 282 313 288C315 295 307 298 305 303C303 310 296 308 290 312C285 316 280 310 274 312C267 314 264 307 259 305C252 302 254 295 249 290C245 285 251 279 250 274C249 267 257 265 260 261C266 257 272 262 281 260Z" fill="url(#seal)"/>
+      <circle cx="281" cy="285" r="22" stroke="#F3ADBA" stroke-opacity=".7" stroke-width="1.4"/>
+      <path d="M281 278C275 272 267 277 269 284C271 291 281 297 281 297S292 289 293 283C294 276 285 272 281 278Z" fill="#A8445E" fill-opacity=".6" stroke="#F2AFBB" stroke-width=".8"/>
+    </g>
+  </g>
+  <g transform="translate(410 298) rotate(20)">
+    <path d="M0 0C-5 15-13 31-24 47" stroke="#8B9D73" stroke-width="3" stroke-linecap="round"/>
+    <path d="M-12 26C-25 25-29 16-29 16C-16 13-11 20-12 26Z" fill="#A8B68A"/>
+    <path d="M-20 40C-8 42-1 36-1 36C-9 28-17 33-20 40Z" fill="#B6C198"/>
+    <g filter="url(#small)" fill="#FFFCF5" stroke="#ECDCCD" stroke-width=".7">
+      <ellipse cx="0" cy="-12" rx="7" ry="13"/>
+      <ellipse cx="0" cy="-12" rx="7" ry="13" transform="rotate(45)"/>
+      <ellipse cx="0" cy="-12" rx="7" ry="13" transform="rotate(90)"/>
+      <ellipse cx="0" cy="-12" rx="7" ry="13" transform="rotate(135)"/>
+      <ellipse cx="0" cy="-12" rx="7" ry="13" transform="rotate(180)"/>
+      <ellipse cx="0" cy="-12" rx="7" ry="13" transform="rotate(225)"/>
+      <ellipse cx="0" cy="-12" rx="7" ry="13" transform="rotate(270)"/>
+      <ellipse cx="0" cy="-12" rx="7" ry="13" transform="rotate(315)"/>
+      <circle r="9" fill="#ECC779" stroke="#DDB86B"/>
+      <circle cx="-2" cy="-2" r="3" fill="#F5D991" stroke="none"/>
+    </g>
+  </g>
+</svg>

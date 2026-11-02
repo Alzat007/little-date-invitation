@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#fbf4ed">
+  <meta name="description" content="有一点想你，也有一点想见你。一封只给你的约会邀请，时间由你挑，心动慢慢来。">
+  <meta property="og:title" content="叮，你收到一封心动邀请 💌">
+  <meta property="og:description" content="想把平凡的一天，变成和你见面的那一天。">
+  <title>心动邮局 · 想和你见一面</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%23f8d6db'/%3E%3Ctext x='9' y='46' font-size='44'%3E♡%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="./style.css">
+  <script src="./app.js" defer></script>
+</head>
+<body>
+  <div class="page-shell">
+    <header class="site-header">
+      <a class="brand" href="./" aria-label="心动邮局首页"><span class="brand-mark">♡</span><span>心动邮局<small>A LITTLE LOVE NOTE</small></span></a>
+      <span class="header-note">一封只给你的邀请 <span class="tiny-heart">♥</span></span>
+    </header>
+    <main id="main">
+      <nav class="steps" aria-label="邀请进度">
+        <span class="step current" data-step="0" aria-current="step"><b>01</b> 收到心意</span><i></i>
+        <span class="step" data-step="1"><b>02</b> 约好见面</span><i></i>
+        <span class="step" data-step="2"><b>03</b> 收藏约定</span>
+      </nav>
+
+      <section class="invitation panel" id="intro" aria-labelledby="intro-title">
+        <div class="art-side">
+          <div class="postmark">SPECIAL DELIVERY<span>WITH LOVE · FOR YOU</span></div>
+          <span class="art-spark spark-a">✧</span><span class="art-spark spark-b">✧</span>
+          <img src="./assets/love-letter.svg" width="560" height="400" alt="一封装着爱心和雏菊的粉色信件" class="envelope">
+          <span class="handwritten">a little nervous, a lot excited.</span>
+          <div class="art-bottom"><span>寄出一份勇气</span><span>等待一个「好呀」</span></div>
+        </div>
+        <div class="letter-side">
+          <span class="eyebrow">TO: 特别的你 <span class="delivery-dot"></span></span>
+          <h1 id="intro-title" tabindex="-1">有一点想你，<br>也有一点<br><em>想见你。</em><svg class="heading-heart" viewBox="0 0 55 55" aria-hidden="true"><path d="M27 45C-7 24 10 5 25 19C39-3 66 19 27 45Z"/></svg></h1>
+          <p class="letter-copy">最近的日子都很普通，<br>所以想邀请你，让其中一天变得特别。<br>把一点点空闲留给我，好不好？</p>
+          <div class="signature">等一个和你见面的日子 <span>♡</span></div>
+          <button class="primary accept" id="accept">我愿意 <span aria-hidden="true">♡ &nbsp;→</span></button>
+          <button class="text-button think" id="think">我再想想，也可以吗？</button>
+          <p class="gentle-note">当然可以，心意是真的，选择由你。</p>
+        </div>
+      </section>
+
+      <section id="planning" class="panel planning" hidden aria-labelledby="plan-title">
+        <aside class="plan-aside">
+          <span class="eyebrow">LET’S MAKE A LITTLE PLAN</span>
+          <h2 id="plan-title" tabindex="-1">下一次见面，<br><em>听你的。</em></h2>
+          <p>挑一个舒服的时间，<br>一起把期待变成见面。</p>
+          <img src="./assets/love-letter.svg" alt="" width="280" height="200">
+          <div class="plan-note"><span>♡</span> 只约定你愿意的事。<br>临时改变主意，也没关系。</div>
+          <button class="text-button" id="back-intro">← 再读一遍邀请</button>
+        </aside>
+        <form id="date-form" class="plan-form">
+          <fieldset>
+            <legend><span class="field-number">01</span> 哪一天，刚好有空？</legend>
+            <div class="date-grid"><label>日期<input type="date" id="date" name="date" required></label><label>时间 <small>北京时间</small><input type="time" id="time" name="time" required value="19:00"></label></div>
+            <div class="quick-dates"><button type="button" data-day="1">明天</button><button type="button" data-day="2">后天</button><button type="button" data-day="weekend">这个周末</button></div>
+          </fieldset>
+          <fieldset>
+            <legend><span class="field-number">02</span> 想在哪里见面？</legend>
+            <div id="locations" class="option-grid locations"></div>
+            <div id="hotel-detail" class="sub-options" hidden><p>选一家喜欢的酒店</p><div class="option-grid" id="hotel-brands"></div></div>
+            <label class="address-label" id="address-wrap">具体地点 <small>选填，也可以之后商量</small><input type="text" id="address" name="address" maxlength="80" placeholder="例如：城市、分店或见面的地址" autocomplete="off"></label>
+            <p class="field-hint" id="location-hint"></p>
+          </fieldset>
+          <fieldset>
+            <legend><span class="field-number">03</span> 一起做点什么？</legend>
+            <div id="activities" class="option-grid activities"></div>
+            <p class="field-hint">只表达此刻的意向，任何时候都可以改变主意。</p>
+          </fieldset>
+          <p class="form-error" id="form-error" role="alert" hidden></p>
+          <button type="submit" class="primary">生成我们的约定 <span aria-hidden="true">♡ &nbsp;→</span></button>
+          <p class="form-footnote">一张小小邀请卡，不会产生预订或自动发送。</p>
+        </form>
+      </section>
+
+      <section id="confirmed" class="confirmation" hidden aria-labelledby="confirm-title">
+        <div class="confirm-heading"><span class="eyebrow">IT’S A LITTLE DATE!</span><h2 id="confirm-title" tabindex="-1">那就，<em>到时候见。</em><span>♡</span></h2><p>平凡的日历里，多了一天值得期待的日子。</p></div>
+        <article class="ticket" id="confirmation-card">
+          <div class="ticket-top"><span>心动邮局 · 约会确认卡</span><span>FOR US ♡</span></div>
+          <div class="ticket-content"><span class="ticket-mini">SAVE OUR LITTLE MOMENT</span><h3>把这一天，留给我们。</h3><div class="ticket-details"><div><span>约定时间</span><strong id="result-date"></strong><b id="result-time"></b></div><div><span>见面地点</span><strong id="result-location"></strong><small id="result-address"></small></div><div><span>想一起做的事</span><strong id="result-activity"></strong></div></div><p class="ticket-promise">带上好心情就好，其他的见面再说。<span>♡</span></p></div>
+          <div class="ticket-bottom"><span>仅为邀请 · 随时可以调整</span><span class="barcode" aria-hidden="true"></span></div>
+        </article>
+        <div class="confirm-actions"><button id="save-card" class="primary">↓ &nbsp; 保存确认卡</button><button id="copy-card" class="secondary">复制约定</button></div>
+        <p class="send-hint">保存或复制后发给对方，让 TA 收到你的回答。</p>
+        <button id="edit-plan" class="text-button">← 还想改一下时间或安排</button>
+      </section>
+
+      <section id="later" class="panel later" hidden aria-labelledby="later-title"><span class="later-heart">♡</span><span class="eyebrow">TAKE YOUR TIME</span><h2 id="later-title" tabindex="-1">没关系呀，<br><em>等你有空，再约。</em></h2><p>你不用急着回答。<br>每一个「愿意」，都应该是刚刚好想要。</p><button id="return-intro" class="primary">把邀请再打开看看</button></section>
+    </main>
+    <footer><div class="footer-flower" aria-hidden="true">✳</div><p>慢慢来，见面本来就是一件值得期待的事。</p><small id="version-note"></small></footer>
+  </div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <dialog id="copy-dialog"><h3>复制这份小约定</h3><p>长按下方文字，即可选择并复制。</p><textarea id="copy-text" readonly aria-label="约会确认文字"></textarea><button id="close-dialog" class="primary">完成</button></dialog>
+</body>
+</html>
